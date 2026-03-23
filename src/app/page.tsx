@@ -64,18 +64,16 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-white/90 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
-            <div className="flex items-center gap-2.5">
-              <div className="h-7 w-7 rounded-md bg-[#004B87] flex items-center justify-center">
-                <Network className="h-3.5 w-3.5 text-white" />
-              </div>
-              <div>
-                <h1 className="font-heading text-base font-bold text-[#004B87] leading-none">
-                  DMI Methodieken
-                </h1>
-                <p className="text-[9px] font-mono text-muted-foreground tracking-widest mt-0.5">
-                  ECOSYSTEEM
-                </p>
-              </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/dmi-logo.svg"
+                alt="DMI Ecosysteem"
+                className="h-8"
+              />
+              <div className="h-6 w-px bg-border/60" />
+              <p className="font-heading text-sm font-semibold text-[#004B87]">
+                Methodieken
+              </p>
             </div>
 
             <div className="flex items-center gap-2">
