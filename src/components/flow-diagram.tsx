@@ -168,7 +168,7 @@ export function FlowDiagram({
             "beleidscyclus",
             "theory-of-change",
             "omgevingsvisie",
-            "behaviour-change-models",
+            "loket-gezond-leven",
             "bcm-mobiliteit",
           ])}
           onMethodClick={onMethodClick}
@@ -200,6 +200,7 @@ export function FlowDiagram({
                 "omsbo",
                 "mens-achter-reisgedrag",
                 "go-methode",
+                "behaviour-change-models",
                 "inclusiviteit",
               ])}
               onMethodClick={onMethodClick}
@@ -210,9 +211,8 @@ export function FlowDiagram({
           <StepColumn label="Oplossingsrichtingen" className="min-w-[150px]">
             <ChipCluster
               items={byId([
-                "toolkit-positieve-gezondheid",
                 "groene-baten-planner",
-                "loket-gezond-leven",
+                "beweegvriendelijke-omgeving",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -240,6 +240,8 @@ export function FlowDiagram({
                 "wijkaanpak-mobiliteit",
                 "verkeer-in-de-stad",
                 "mobiliteit-openbare-ruimte",
+                "behaviour-change-models",
+                "beweegvriendelijke-omgeving",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -250,7 +252,11 @@ export function FlowDiagram({
               Participatie &amp; stakeholders
             </p>
             <ChipCluster
-              items={byId(["omsbo", "participatieve-beleidsontwikkeling"])}
+              items={byId([
+                "omsbo",
+                "participatieve-beleidsontwikkeling",
+                "loket-gezond-leven",
+              ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />
@@ -281,9 +287,17 @@ export function FlowDiagram({
             />
           </StepColumn>
           <FlowArrow />
-          <StepColumn label="Probleemanalyse" className="min-w-[140px]">
+          <StepColumn
+            label="Beleidskeuze probleemanalyse"
+            className="min-w-[160px]"
+          >
             <ChipCluster
-              items={byId(["fame-cem", "data-en-modellering"])}
+              items={byId([
+                "fame-cem",
+                "data-en-modellering",
+                "toolkit-positieve-gezondheid",
+                "liso",
+              ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />
@@ -311,7 +325,6 @@ export function FlowDiagram({
                 "cpted",
                 "sociale-veiligheid",
                 "mobility-mapping",
-                "werkboek-7-werkvormen",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -320,7 +333,7 @@ export function FlowDiagram({
           <FlowArrow />
           <StepColumn label="Implementatie" className="min-w-[130px]">
             <ChipCluster
-              items={byId(["midi", "liso"])}
+              items={byId(["midi"])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />
@@ -374,6 +387,7 @@ export function FlowDiagram({
                 "verkeersmanagement",
                 "road-asset-management",
                 "wegbeheer",
+                "werkboek-7-werkvormen",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -393,7 +407,7 @@ export function FlowDiagram({
           Reflecteren en Leren (M&amp;E)
         </p>
         <ChipCluster
-          items={byId(["memovin", "festa-v"])}
+          items={byId(["memovin", "festa-v", "loket-gezond-leven"])}
           onMethodClick={onMethodClick}
           filters={activeFilters}
         />
