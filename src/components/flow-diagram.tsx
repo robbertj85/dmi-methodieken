@@ -42,6 +42,8 @@ function getFiltered(
 const domainDot: Record<string, string> = {
   mobiliteit: "bg-[#7ECBC0]",
   gezondheid: "bg-[#5CB85C]",
+  energie: "bg-[#F2A900]",
+  water: "bg-[#0091B3]",
   algemeen: "bg-[#004B87]",
 };
 
@@ -148,10 +150,12 @@ export function FlowDiagram({
   return (
     <div className="w-full space-y-4">
       {/* Legend */}
-      <div className="flex items-center gap-4 text-[10px] font-mono text-muted-foreground mb-2">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10px] font-mono text-muted-foreground mb-2">
         <span className="font-semibold tracking-wider uppercase">Domein:</span>
         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#7ECBC0]" />Mobiliteit</span>
         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#5CB85C]" />Gezondheid &amp; Welzijn</span>
+        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#F2A900]" />Elektriciteit &amp; Energie</span>
+        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#0091B3]" />Water</span>
         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#004B87]" />Algemeen</span>
       </div>
 
@@ -187,7 +191,17 @@ export function FlowDiagram({
         <div className="flex items-start gap-2 overflow-x-auto pb-2">
           <StepColumn label="Ambitie / Visie / Doel" className="min-w-[150px]">
             <ChipCluster
-              items={byId(["wise", "sump", "5-lagenmodel", "anders-reizen"])}
+              items={byId([
+                "wise",
+                "sump",
+                "5-lagenmodel",
+                "anders-reizen",
+                "integraal-programmeren",
+                "handreiking-res",
+                "bouwstenen-energievisie",
+                "nationaal-water-programma",
+                "regionale-waterprogrammas",
+              ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />
@@ -202,6 +216,9 @@ export function FlowDiagram({
                 "go-methode",
                 "behaviour-change-models",
                 "inclusiviteit",
+                "burgerparticipatie-energietransitie",
+                "handboek-water-ruimtelijke-plannen",
+                "weging-waterbelang-delfland",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -213,6 +230,13 @@ export function FlowDiagram({
               items={byId([
                 "groene-baten-planner",
                 "beweegvriendelijke-omgeving",
+                "etm",
+                "vesta-mais",
+                "hestia",
+                "rev",
+                "maatlat-klimaatadaptieve-gebouwde-omgeving",
+                "gereedschapskist-wbs",
+                "d-hydro",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -221,7 +245,13 @@ export function FlowDiagram({
           <FlowArrow />
           <StepColumn label="Beleidskeuze" className="min-w-[130px]">
             <ChipCluster
-              items={byId(["mkba-mirt"])}
+              items={byId([
+                "mkba-mirt",
+                "vng-staalkaarten",
+                "waterbeheerprogramma-waterschappen",
+                "trowa",
+                "handreiking-stedelijk-waterbeheer",
+              ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />
@@ -242,6 +272,16 @@ export function FlowDiagram({
                 "mobiliteit-openbare-ruimte",
                 "behaviour-change-models",
                 "beweegvriendelijke-omgeving",
+                "handreiking-energienetwerken",
+                "middenspanningsruimtes-gmr",
+                "ruimtelijke-handreiking-elektriciteitsstations",
+                "nipv-waterstofdragers",
+                "rev",
+                "handboek-water-ruimtelijke-plannen",
+                "weging-waterbelang-delfland",
+                "maatlat-klimaatadaptieve-gebouwde-omgeving",
+                "gereedschapskist-wbs",
+                "handreiking-stedelijk-waterbeheer",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -256,6 +296,9 @@ export function FlowDiagram({
                 "omsbo",
                 "participatieve-beleidsontwikkeling",
                 "loket-gezond-leven",
+                "handreiking-res",
+                "warmte-kermis",
+                "burgerparticipatie-energietransitie",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -281,6 +324,7 @@ export function FlowDiagram({
                 "regionale-mobiliteitsprogrammas",
                 "smart-mobility-its-europa",
                 "regulation-rtti",
+                "miek",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -297,6 +341,10 @@ export function FlowDiagram({
                 "data-en-modellering",
                 "toolkit-positieve-gezondheid",
                 "liso",
+                "handreiking-betaalbaarheid",
+                "egk-tool",
+                "damo",
+                "nhi",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -325,6 +373,15 @@ export function FlowDiagram({
                 "cpted",
                 "sociale-veiligheid",
                 "mobility-mapping",
+                "handreiking-energienetwerken",
+                "middenspanningsruimtes-gmr",
+                "ruimtelijke-handreiking-elektriciteitsstations",
+                "warmte-kermis",
+                "nipv-waterstofdragers",
+                "warmingup-design-toolkit",
+                "vision-network-analysis",
+                "gaia-lv-network-design",
+                "vision-cloud-solution",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -333,7 +390,7 @@ export function FlowDiagram({
           <FlowArrow />
           <StepColumn label="Implementatie" className="min-w-[130px]">
             <ChipCluster
-              items={byId(["midi"])}
+              items={byId(["midi", "estrac-transforming-regions"])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
             />

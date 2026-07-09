@@ -17,6 +17,8 @@ import {
   Globe,
   HeartPulse,
   Building2,
+  Zap,
+  Droplets,
   Filter,
 } from "lucide-react";
 
@@ -42,6 +44,16 @@ const domainButtonStyles: Record<Domain, { active: string; inactive: string; ico
     active: "bg-[#5CB85C] text-white border-[#5CB85C]",
     inactive: "bg-transparent text-[#5CB85C] border-[#5CB85C]/40 hover:bg-[#5CB85C]/10",
     icon: <HeartPulse className="h-3.5 w-3.5" />,
+  },
+  energie: {
+    active: "bg-[#F2A900] text-[#004B87] border-[#F2A900]",
+    inactive: "bg-transparent text-[#B37F00] border-[#F2A900]/40 hover:bg-[#F2A900]/10",
+    icon: <Zap className="h-3.5 w-3.5" />,
+  },
+  water: {
+    active: "bg-[#0091B3] text-white border-[#0091B3]",
+    inactive: "bg-transparent text-[#0091B3] border-[#0091B3]/40 hover:bg-[#0091B3]/10",
+    icon: <Droplets className="h-3.5 w-3.5" />,
   },
   algemeen: {
     active: "bg-[#004B87] text-white border-[#004B87]",
