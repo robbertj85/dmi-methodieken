@@ -4,9 +4,11 @@ import {
   type Domain,
   type PolicyTrack,
   type CrossCuttingTheme,
+  type DocumentType,
   domainLabels,
   policyTrackLabels,
   crossCuttingLabels,
+  documentTypeLabels,
 } from "@/data/methodieken";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -26,6 +28,7 @@ export interface Filters {
   domain: Domain | null;
   policyTrack: PolicyTrack | null;
   crossCuttingTheme: CrossCuttingTheme | null;
+  documentType: DocumentType | null;
   search: string;
 }
 
@@ -64,7 +67,10 @@ const domainButtonStyles: Record<Domain, { active: string; inactive: string; ico
 
 export function FilterBar({ filters, onChange }: FilterBarProps) {
   const hasActiveFilters =
-    filters.domain || filters.policyTrack || filters.crossCuttingTheme;
+    filters.domain ||
+    filters.policyTrack ||
+    filters.crossCuttingTheme ||
+    filters.documentType;
 
   return (
     <div className="space-y-3">
@@ -174,6 +180,36 @@ export function FilterBar({ filters, onChange }: FilterBarProps) {
         </div>
       </div>
 
+      {/* Document type filters */}
+      <div className="space-y-2">
+        <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+          Type document
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          {(Object.keys(documentTypeLabels) as DocumentType[]).map((type) => {
+            const isActive = filters.documentType === type;
+            return (
+              <button
+                key={type}
+                onClick={() =>
+                  onChange({
+                    ...filters,
+                    documentType: isActive ? null : type,
+                  })
+                }
+                className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium transition-colors cursor-pointer ${
+                  isActive
+                    ? "bg-foreground text-background border-foreground"
+                    : "bg-transparent text-foreground border-border hover:bg-muted"
+                }`}
+              >
+                {documentTypeLabels[type]}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Clear filters */}
       {hasActiveFilters && (
         <Button
@@ -184,6 +220,7 @@ export function FilterBar({ filters, onChange }: FilterBarProps) {
               domain: null,
               policyTrack: null,
               crossCuttingTheme: null,
+              documentType: null,
               search: filters.search,
             })
           }

@@ -24,6 +24,7 @@ export default function Home() {
     domain: null,
     policyTrack: null,
     crossCuttingTheme: null,
+    documentType: null,
     search: "",
   });
 
@@ -42,6 +43,8 @@ export default function Home() {
         !m.crossCuttingThemes.includes(filters.crossCuttingTheme)
       )
         return false;
+      if (filters.documentType && m.documentType !== filters.documentType)
+        return false;
       if (
         filters.search &&
         !m.name.toLowerCase().includes(filters.search.toLowerCase()) &&
@@ -56,6 +59,7 @@ export default function Home() {
     filters.domain,
     filters.policyTrack,
     filters.crossCuttingTheme,
+    filters.documentType,
   ].filter(Boolean).length;
 
   return (
@@ -173,8 +177,9 @@ export default function Home() {
       <footer className="border-t border-border/40 bg-white/50 mt-auto">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
           <p className="text-[10px] font-mono text-muted-foreground/60 text-center">
-            DMI Ecosysteem &middot; TNO &middot; Fase 1: Mobiliteit,
-            Gezondheid &amp; Welzijn, Algemeen
+            DMI Ecosysteem &middot; TNO &middot; Technolution &middot; Fase 1:
+            Mobiliteit, Gezondheid &amp; Welzijn, Elektriciteit &amp; Energie,
+            Water en domeinoverstijgende methodieken
           </p>
         </div>
       </footer>

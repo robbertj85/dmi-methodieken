@@ -8,6 +8,8 @@ import {
   policyTrackLabels,
   policyTrackColors,
   crossCuttingLabels,
+  documentTypeLabels,
+  documentTypeColors,
 } from "@/data/methodieken";
 import {
   Dialog,
@@ -71,6 +73,13 @@ export function MethodologyDetail({
           >
             {policyTrackLabels[methodiek.policyTrack]}
           </Badge>
+          {methodiek.documentType && (
+            <Badge
+              className={`${documentTypeColors[methodiek.documentType]} gap-1.5 text-xs font-mono`}
+            >
+              {documentTypeLabels[methodiek.documentType]}
+            </Badge>
+          )}
         </div>
 
         <Separator />

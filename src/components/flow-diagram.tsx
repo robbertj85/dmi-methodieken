@@ -174,6 +174,7 @@ export function FlowDiagram({
             "omgevingsvisie",
             "loket-gezond-leven",
             "bcm-mobiliteit",
+            "siaf",
           ])}
           onMethodClick={onMethodClick}
           filters={activeFilters}
@@ -196,6 +197,7 @@ export function FlowDiagram({
                 "sump",
                 "5-lagenmodel",
                 "anders-reizen",
+                "gebiedscheck-gezonde-leefomgeving",
                 "integraal-programmeren",
                 "handreiking-res",
                 "bouwstenen-energievisie",
@@ -217,6 +219,8 @@ export function FlowDiagram({
                 "behaviour-change-models",
                 "inclusiviteit",
                 "burgerparticipatie-energietransitie",
+                "ontwerpend-onderzoek-ruimte-energie",
+                "klimaatmonitor",
                 "handboek-water-ruimtelijke-plannen",
                 "weging-waterbelang-delfland",
               ])}
@@ -234,6 +238,9 @@ export function FlowDiagram({
                 "vesta-mais",
                 "hestia",
                 "rev",
+                "serious-games-energie-ruimte-warmte",
+                "nzies",
+                "siaf",
                 "maatlat-klimaatadaptieve-gebouwde-omgeving",
                 "gereedschapskist-wbs",
                 "d-hydro",
@@ -270,6 +277,8 @@ export function FlowDiagram({
                 "wijkaanpak-mobiliteit",
                 "verkeer-in-de-stad",
                 "mobiliteit-openbare-ruimte",
+                "handreiking-mobiliteit-duurzame-gebiedsontwikkeling",
+                "ontwerpend-onderzoek-ruimte-energie",
                 "behaviour-change-models",
                 "beweegvriendelijke-omgeving",
                 "handreiking-energienetwerken",
@@ -299,6 +308,9 @@ export function FlowDiagram({
                 "handreiking-res",
                 "warmte-kermis",
                 "burgerparticipatie-energietransitie",
+                "handreiking-mobiliteit-duurzame-gebiedsontwikkeling",
+                "rws-hinderaanpak",
+                "serious-games-energie-ruimte-warmte",
               ])}
               onMethodClick={onMethodClick}
               filters={activeFilters}
@@ -338,6 +350,7 @@ export function FlowDiagram({
             <ChipCluster
               items={byId([
                 "fame-cem",
+                "rws-hinderaanpak",
                 "data-en-modellering",
                 "toolkit-positieve-gezondheid",
                 "liso",
@@ -464,7 +477,7 @@ export function FlowDiagram({
           Reflecteren en Leren (M&amp;E)
         </p>
         <ChipCluster
-          items={byId(["memovin", "festa-v", "loket-gezond-leven"])}
+          items={byId(["memovin", "festa-v", "loket-gezond-leven", "klimaatmonitor"])}
           onMethodClick={onMethodClick}
           filters={activeFilters}
         />

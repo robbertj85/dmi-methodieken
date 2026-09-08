@@ -7,6 +7,8 @@ import {
   policyTrackLabels,
   policyTrackColors,
   processStepLabels,
+  documentTypeLabels,
+  documentTypeColors,
 } from "@/data/methodieken";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -81,6 +83,14 @@ export function MethodologyCard({
         >
           {processStepLabels[methodiek.processStep]}
         </Badge>
+        {methodiek.documentType && (
+          <Badge
+            variant="secondary"
+            className={`${documentTypeColors[methodiek.documentType]} text-[10px] px-1.5 py-0 font-mono`}
+          >
+            {documentTypeLabels[methodiek.documentType]}
+          </Badge>
+        )}
       </div>
     </button>
   );
